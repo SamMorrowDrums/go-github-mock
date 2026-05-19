@@ -56,7 +56,7 @@ mockedHTTPClient := mock.NewMockedHTTPClient(
         }),
     ),
 )
-c := github.NewClient(mockedHTTPClient)
+c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
 
 ctx := context.Background()
 
@@ -103,7 +103,7 @@ mockedHTTPClient := NewMockedHTTPClient(
     ),
 )
 
-c := github.NewClient(mockedHTTPClient)
+c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
 
 ctx := context.Background()
 
@@ -133,7 +133,7 @@ mockedHTTPClient := mock.NewMockedHTTPClient(
         }),
     ),
 )
-c := github.NewClient(mockedHTTPClient)
+c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
 
 ctx := context.Background()
 
@@ -174,7 +174,7 @@ mockedHTTPClient := NewMockedHTTPClient(
     ),
 )
 
-c := github.NewClient(mockedHTTPClient)
+c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
 
 ctx := context.Background()
 
@@ -227,7 +227,7 @@ mockedHTTPClient := mock.NewMockedHTTPClient(
     ),
 )
 
-c := githubEnterprise.NewClient(mockedHTTPClient)
+c, _ := githubEnterprise.NewClient(githubEnterprise.WithHTTPClient(mockedHTTPClient))
 
 ctx := context.Background()
 
