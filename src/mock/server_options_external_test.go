@@ -31,7 +31,7 @@ func TestWithRateLimit(t *testing.T) {
 		mock.WithRateLimit(10, 1),
 	)
 
-	ghc, _ := github.NewClient(github.WithHTTPClient(mhc))
+	ghc := mock.MustNewGHClient(t, mhc)
 	opts := &github.RepositoryListByOrgOptions{}
 	repoNames := []string{}
 	rleCount := 0

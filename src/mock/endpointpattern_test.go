@@ -40,7 +40,7 @@ func TestRepoGetContents(t *testing.T) {
 					),
 				)
 
-				c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
+				c := MustNewGHClient(t, mockedHTTPClient)
 
 				ctx := context.Background()
 
@@ -103,7 +103,7 @@ func TestRepoGetContentsForDirectory(t *testing.T) {
 					),
 				)
 
-				client, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
+				client := MustNewGHClient(t, mockedHTTPClient)
 
 				ctx := context.Background()
 
@@ -155,7 +155,7 @@ func TestPatchGitReference(t *testing.T) {
 		),
 	)
 
-	c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
+	c := MustNewGHClient(t, mockedHTTPClient)
 
 	ctx := context.Background()
 
@@ -188,7 +188,7 @@ func TestGetGitReference(t *testing.T) {
 		),
 	)
 
-	c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
+	c := MustNewGHClient(t, mockedHTTPClient)
 
 	ctx := context.Background()
 
@@ -216,7 +216,7 @@ func TestRepositoriesGetCommitSHA1WithForwardSlash(t *testing.T) {
 		),
 	)
 
-	c, _ := github.NewClient(github.WithHTTPClient(mockedHTTPClient))
+	c := MustNewGHClient(t, mockedHTTPClient)
 
 	ctx := context.Background()
 
